@@ -1,6 +1,7 @@
 import os
 import telebot
 from telebot import types
+from generator import Generator
 
 BOT_TOKEN = os.environ.get('NICEQR_BOT_TOKEN')
 bot = telebot.TeleBot(BOT_TOKEN)
@@ -28,6 +29,7 @@ def url_handler(message):
 def prompt_handler(message):
     prompt = message.text
     bot.send_message(message.from_user.id, "Ваш url: " + url + ", ваш prompt: " + prompt)
+    Generator(url=url, prompt=prompt).generate()
 
 
 bot.infinity_polling()
