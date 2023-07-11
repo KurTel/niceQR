@@ -1,3 +1,5 @@
+import zxing
+
 class Generator:
     def __init__(self, url, prompt):
         self._url = url
@@ -6,8 +8,12 @@ class Generator:
 
     def generate(self):
         print('generate me')
-        self._verifyQr('123.png')
+        isValid = self._verifyQr('/Users/artem/Downloads/photo_2023-07-10 15.14.58.jpeg')
+        print(isValid)
 
 
     def _verifyQr(self, png):
-        print('verify me')
+        reader = zxing.BarCodeReader()
+        barcode = reader.decode(png)
+        print(barcode)
+        return barcode.parsed is not None

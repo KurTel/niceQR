@@ -17,3 +17,5 @@
 .settings/
 *.sublime-workspace
 .tags
+
+.venv
