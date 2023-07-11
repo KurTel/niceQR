@@ -12,6 +12,7 @@ API пока смотреть в хроме куда отправляются з
 
 pip install pyTelegramBotAPI
 pip install zxing
+pip install amzqr
 
 export NICEQR_BOT_TOKEN=your-bot-token-here
 
