@@ -6,8 +6,6 @@ from generator import Generator
 BOT_TOKEN = os.environ.get('NICEQR_BOT_TOKEN')
 bot = telebot.TeleBot(BOT_TOKEN)
 
-# Generator('123').generate(url='https://google.com', prompt='')
-
 @bot.message_handler(commands = ['generate', 'g'])
 def generate(message):
     send_message = bot.send_message(message.from_user.id, "Ведите URL")
